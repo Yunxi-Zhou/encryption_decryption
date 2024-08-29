@@ -1,0 +1,30 @@
+/* <!-- content 包含实际内容 文本 图片-->
+<!-- Padding 内边距 内容与边框之间的空间 -->
+ <!-- Border 边框 盒子的边界 围绕内边距的外部 -->
+  <!-- Margin 外边距 边框外部 盒子与其他元素之间的空间 --> */
+ 
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+ }
+
+ body {
+    font-family: Arial, sans-serif;
+    display:flex;
+    height: 100vh;
+    overflow: hidden;
+ }
+
+ header {
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+ }
