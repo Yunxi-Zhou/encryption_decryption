@@ -1,0 +1,94 @@
+@media screen and (max-width: 428px) {
+    /* iPhone 14 Plus 宽度为 428px */
+    
+    body {
+        font-size: 16px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .date-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .sidebar .icon {
+        font-size: 24px;
+        margin: 0;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .encryption-decryption-panel,
+    .notifications,
+    .notebook {
+        margin-bottom: 20px;
+    }
+
+    textarea {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .button-group {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .button-group button,
+    .button-group input {
+        margin: 5px;
+    }
+
+    .cat-gallery-inner {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .cat-item {
+        flex: 0 0 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .money-container {
+        height: calc(100vh - 200px);
+    }
+
+    .notebook {
+        position: relative; /* 确保在小屏幕下也保持相对定位 */
+        padding-top: 50px; /* 为 remove-note 按钮留出空间 */
+    }
+
+    .remove-note {
+        top: 10px; /* 保持在顶部 */
+        right: 10px; /* 稍微调整右边距 */
+    }
+
+    .add-note, .remove-note {
+        font-size: 14px; /* 减小按钮字体大小 */
+        padding: 8px 12px; /* 减小按钮内边距 */
+    }
+}

@@ -215,3 +215,43 @@
 .popup-buttons button {
     margin-left: 10px;
 }
+
+/* 在文件末尾添加 */
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sidebar {
+    flex: 0 0 auto;
+}
+
+.remove-note {
+   background-color: pink;
+   color: white;
+   border: none;
+   padding: 10px 15px;
+   border-radius: 5px;
+   cursor: pointer;
+   position: absolute; /* 使用绝对定位 */
+   right: 20px; /* 距离右边 20px */
+   top: 10px; /* 距离顶部 10px */
+}
+
+.notebook {
+   margin-bottom: 40px;
+   margin-top: 20px;
+   margin-right: 20px;
+   flex: 0.5;
+   position: relative; /* 添加相对定位 */
+}
+
+main {
+    flex: 1;
+    min-width: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

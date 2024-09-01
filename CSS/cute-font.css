@@ -52,3 +52,22 @@ input, textarea {
 ::placeholder {
     color: #999999;
 }
+
+/* 在文件末尾添加 */
+@media screen and (max-width: 428px) {
+    body, button, input, textarea {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3, h4, h5, h6 {
+        font-size: 18px;
+    }
+}
