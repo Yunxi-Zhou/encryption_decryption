@@ -1,3 +1,5 @@
+
+
 export default class PointerParticle {
     constructor(spread, speed, component) {
         const { ctx, pointer, hue } = component;

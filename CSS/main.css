@@ -2,8 +2,154 @@
 <!-- Padding 内边距 内容与边框之间的空间 -->
  <!-- Border 边框 盒子的边界 围绕内边距的外部 -->
   <!-- Margin 外边距 边框外部 盒子与其他元素之间的空间 --> */
+  
+ .content-wrapper {
+    display: flex;
+    margin-top: 60px;
+    height: calc(100vh - 60px);
+    overflow: hidden;
+ }
+
+ main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: 50px; /* 为侧边栏留出空间，减小左边距 */
+ }
+
+ .encryption-decryption-panel, .notifications, .notebook {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    overflow-y: auto;
+    max-height: calc(100vh - 100px);
+ }
+
+ .encryption-decryption-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 2;
+ }
+
+ .notifications {
+    flex: 1;
+ }
+
+ .notifications .notification-box {
+    max-height: 300px;
+    overflow-y: auto;
+ }
+
+ .notebook {
+    flex: 0.5;
+ }
+
+ .notebook ul {
+    list-style-type: none;
+    padding: 0;
+ }
+
+ .notebook li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+ }
+
+ .add-note {
+    background-color: pink;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+ }
+
+ /* 侧边栏样式 */
+ .sidebar {
+    background-color: #f0f0f0;
+    padding: 15px 10px; /* 减小左右内边距 */
+    width: 50px; /* 减小宽度 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    position: fixed;
+    top: 80px; /* 增加顶部距离 */
+    height: calc(100vh - 80px); /* 调整高度 */
+    border-right: 1px solid #ddd;
+    z-index: 100;
+ }
+
+ .sidebar .icon {
+    background-color: #ffffff; /* 改为白底 */
+    color: #000000; /* 改为黑色图标 */
+    padding: 5px 10px; /* 调整图标内边距 */
+    border: none;
+    border-radius: 5px; /* 改为和help button一样的形状 */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* 添加颜色过渡 */
+    font-size: 20px; /* 增大图标 */
+ }
+
+ .sidebar .icon:hover {
+    background-color: #ff69b4; /* 触碰时变色 */
+    color: #ffffff; /* 触碰时图标变为白色 */
+ }
+
+ /* 顶栏样式 */
+ header {
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    height: 60px;
+ }
+
+ header h1 {
+    font-size: 24px;
+    color: #333;
+ }
+
+ .date-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: absolute; /* 使用绝对定位 */
+    right: 100px; /* 距离右边 100px */
+    top: 50%; /* 垂直居中 */
+    transform: translateY(-50%); /* 精确垂直居中 */
+ }
+
+ .date-info span {
+    font-size: 14px;
+    color: #666;
+ }
+
+ .help {
+    background-color: pink;
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+ }
+
+ .help:hover {
+   background-color: greenyellow;
+ }
  
- * {
+
+ /* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box; 
@@ -57,9 +203,9 @@
    padding: 20px;
    flex: 1;
    overflow-y: auto;
- }
+ } */
 
- section h3 {
+ /* section h3 {
    margin-bottom: 10px;
  }
 
@@ -75,6 +221,5 @@
    right: 0;
    top: 60px;
    width: 200px;
-   height: calc(100vh-60px);
-   
- }
+   height: calc(100vh-6)
+ } */

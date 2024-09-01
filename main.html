@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encryption/Decryption--^W^</title>
+    <title>加密/解密--^W^</title>
     <!-- CSS -->
     <link rel="stylesheet" href="CSS/clock.css">
     <link rel="stylesheet" href="CSS/main.css">
@@ -12,49 +12,61 @@
 <body>
     <!-- 顶栏 -->
     <header>
-        <h1>Welcome to the encryption web page</h1>
+        <h1>欢迎来到加密网页</h1>
         <div class="date-info">
             <span id="date">YYYY-MM-DD</span>
             <span id="clock">00:00:00</span>
-            <button class="help">help</button>
+            <button class="help">帮助</button>
         </div>
     </header>
-     <!-- 侧边栏 -->
-    <aside class = "sidebar">
-        <button class="icon"></button>
-        <button class="icon">☰</button>
-        <button class="icon">😺</button>
-        <button class="icon">⚙️</button>
-        <button class="icon"></button>
 
-    </aside>
+    <div class="content-wrapper">
+        <!-- 侧边栏 -->
+        <aside class="sidebar">
+            <button class="icon">🔒</button>
+            <button class="icon">☰</button>
+            <button class="icon">😺</button>
+            <button class="icon">⚙️</button>
+            <button class="icon">📝</button>
+        </aside>
 
-    <main>
-        <section class="Encryption/Decryption">
-            <h2>The Encryption bar</h2>
+        <main>
+            <!-- 加密解密板块 -->
+            <section class="encryption-decryption-panel">
+                <h2>加密/解密</h2>
+                <div class="input-area">
+                    <textarea id="inputText" placeholder="请输入要加密或解密的文本"></textarea>
+                </div>
+                <div class="button-group">
+                    <button id="encryptBtn">加密</button>
+                    <button id="decryptBtn">解密</button>
+                </div>
+                <div class="output-area">
+                    <textarea id="outputText" readonly placeholder="结果将显示在这里"></textarea>
+                </div>
+            </section>
 
+            <section class="notifications">
+                <h3>通知</h3>
+                <div class="notification-box">
+                </div>
+            </section>
+        </main>
+
+        <section class="notebook">
+            <h3>笔记本</h3>
+            <ul>
+                <li>笔记1</li>
+                <li>笔记2</li>
+                <button class="add-note">➕</button>
+            </ul>
         </section>
-
-        <section class="notifications">
-            <h3>notifications</h3>
-            <div class="notification-box">
-
-            </div>
-        </section>
-    </main>
-
-    <section class="notebook">
-        <h3>Notebook</h3>
-        <ul>
-            <li>xxxxxxx</li>
-            <li>xxxxxxx</li>
-            <button class="add-note">➕</button>
-        </ul>
-    </section>
+    </div>
     
-     <canvas id="particleCanvas"></canvas>
-     <!-- JS -->
-     <script src="JS/clock.js"></script>
-     <script type="module" src="JS/anime.js"></script>
+    <canvas id="particleCanvas"></canvas>
+    <!-- JS -->
+    <script src="JS/clock.js"></script>
+    <script type="module" src="JS/anime.js"></script>
+    
 </body>
 </html>
