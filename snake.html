@@ -3,30 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>金钱页面</title>
+    <title>Snake Game</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/clock.css">
     <link rel="stylesheet" href="CSS/main.css">
     <link rel="stylesheet" href="CSS/pointer-particles.css">
     <link rel="stylesheet" href="CSS/cute-font.css">
-    <style>
-        .money-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: calc(100vh - 100px); /* 减去头部高度 */
-        }
-        .money-image {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-    </style>
+    <link rel="stylesheet" href="CSS/snake.css">
 </head>
 <body>
     <header>
-        <h1>金钱页面</h1>
-        <div class="date-info">
+        <h1>是贪吃蛇哦~</h1>
+        <div class="data-info">
             <span id="date">YYYY-MM-DD</span>
             <span id="clock">00:00:00</span>
+            <button id="start" class="help">开始</button>
         </div>
     </header>
 
@@ -39,12 +30,6 @@
             <button class="icon" data-page="set.html">⚙️</button>
             <button class="icon" data-page="money.html">💴</button>
         </aside>
-
-        <main>
-            <div class="money-container">
-                <img src="images/money.jpg" alt="金钱图片" class="money-image">
-            </div>
-        </main>
     </div>
 
     <div class="custom-cursor"></div>
@@ -52,5 +37,7 @@
     <script src="JS/clock.js"></script>
     <script src="JS/sidebar-navigation.js"></script>
     <script src="JS/auto-logout.js"></script>
+    <script src="JS/snake.js"></script>
+    
 </body>
 </html>
