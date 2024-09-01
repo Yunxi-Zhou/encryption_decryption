@@ -12,7 +12,12 @@ function encrypt(text, shift = 3) {
 
 // 解密函数
 function decrypt(text, shift = 3) {
-    return encrypt(text, alphabet.length - shift);
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const shiftedAlphabet = alphabet.slice(shift) + alphabet.slice(0, shift);
+    return text.split('').map(char => {
+        const index = shiftedAlphabet.indexOf(char);
+        return index !== -1 ? alphabet[index] : char;
+    }).join('');
 }
 
 // 获取DOM元素

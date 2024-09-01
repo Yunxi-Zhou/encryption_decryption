@@ -164,6 +164,19 @@
    background-color: rgb(255, 106, 47);
  }
 
+ .help {
+   background-color: pink;
+   color: black;
+   border: none;
+   padding: 5px 10px;
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+.help:hover {
+  background-color: rgb(255, 106, 47);
+}
+
  .popup {
     position: fixed;
     top: 0;

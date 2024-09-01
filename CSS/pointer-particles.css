@@ -1,8 +1,20 @@
 body {
+    cursor: none;
     margin: 0;
     overflow: hidden;
 }
 
 canvas {
     display: block;
+}
+
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid white;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    transition: transform 0.1s ease;
 }

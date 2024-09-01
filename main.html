@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="CSS/clock.css">
     <link rel="stylesheet" href="CSS/main.css">
     <link rel="stylesheet" href="CSS/pointer-particles.css">
+    <link rel="stylesheet" href="CSS/cute-font.css">
 </head>
 <body>
     <header>
@@ -27,7 +28,7 @@
             <button class="icon" data-page="lock.html">🔒</button>
             <button class="icon" data-page="cat.html">😺</button>
             <button class="icon" data-page="set.html">⚙️</button>
-            <button class="icon">📝</button>
+            <button class="icon" data-page="money.html">💴</button>
         </aside>
 
         <main>
@@ -41,6 +42,7 @@
                     <button id="encryptBtn">加密</button>
                     <button id="decryptBtn">解密</button>
                     <label for="shiftInput">偏移量：</label>
+                    <input type="number" id="shiftInput" min="1" max="25" value="3">
                 </div>
                 <div class="output-area">
                     <textarea id="outputText" readonly placeholder="结果将显示在这里"></textarea>
@@ -64,6 +66,8 @@
     </div>
     
     <canvas id="particleCanvas"></canvas>
+    <div class="custom-cursor"></div>
+    <script src="JS/pointer-particles.js"></script>
     <!-- JS -->
     <script src="JS/clock.js"></script>
     <script type="module" src="JS/anime.js"></script>

@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&display=swap');
+
+body, button, input, textarea {
+    font-family: 'Noto Sans SC', sans-serif;
+    color: #333333;
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-weight: 500;
+    color: #333333;
+}
+
+.icon {
+    font-family: sans-serif;
+}
+
+/* 为链接设置颜色 */
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 为按钮设置统一的文本颜色 */
+button {
+    color: #ffffff;
+    background-color: #4CAF50;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 400;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* 为输入框设置统一的文本颜色 */
+input, textarea {
+    color: #333333;
+    border: 1px solid #cccccc;
+    padding: 8px;
+}
+
+/* 为占位符文本设置颜色 */
+::placeholder {
+    color: #999999;
+}

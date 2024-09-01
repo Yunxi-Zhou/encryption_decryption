@@ -1,9 +1,9 @@
 #Encryption_Decryption
-## 简介
-这是一个基于HTML、CSS和JavaScript的加密/解密网页。它允许用户输入文本并选择加密或解密操作。加密后的文本将显示在输出区域，用户可以复制或保存结果。
+## Introduction
+This is an encryption/decryption web page based on HTML, CSS and JavaScript. It allows the user to enter text and select an encryption or decryption operation. The encrypted text will be displayed in the output area and the user can copy or save the result.
 
-## 功能
-- 输入文本
-- 选择加密或解密操作
-- 输出加密或解密后的文本
-- 复制或保存结果
+## Functions
+- Input text
+- Select encryption or decryption operation
+- Output encrypted or decrypted text
+- Copy or save the result
