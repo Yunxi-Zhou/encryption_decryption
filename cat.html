@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猫咪页面</title>
+    <link rel="stylesheet" href="CSS/main.css">
+    <style>
+        .cat-gallery {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        .cat-gallery-inner {
+            display: flex;
+            animation: slide 30s linear infinite;
+        }
+        .cat-item {
+            flex: 0 0 300px;
+            height: 300px;
+            margin-right: 20px;
+        }
+        .cat-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        .cat-gallery:hover .cat-gallery-inner {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>壮壮小世界</h1>
+        <div class="date-info">
+            <span id="date">YYYY-MM-DD</span>
+            <span id="clock">00:00:00</span>
+            <button class="help">帮助</button>
+        </div>
+    </header>
+
+    <div class="content-wrapper">
+        <aside class="sidebar">
+            <button class="icon" data-page="main.html">🏠</button>
+            <button class="icon">🔒</button>
+            <button class="icon" data-page="cat.html">😺</button>
+            <button class="icon">⚙️</button>
+            <button class="icon">📝</button>
+        </aside>
+
+        <main>
+            <h2>欢迎来到壮壮照片墙</h2>
+            <div class="cat-gallery">
+                <div class="cat-gallery-inner">
+                    <div class="cat-item"><img src="images/cat1.jpg" alt="猫咪1"></div>
+                    <div class="cat-item"><img src="images/cat2.jpg" alt="猫咪2"></div>
+                    <div class="cat-item"><img src="images/cat3.jpg" alt="猫咪3"></div>
+                    <div class="cat-item"><img src="images/cat4.jpg" alt="猫咪4"></div>
+                    <div class="cat-item"><img src="images/cat5.jpg" alt="猫咪5"></div>
+                    <div class="cat-item"><img src="images/cat6.jpg" alt="猫咪6"></div>
+                    <div class="cat-item"><img src="images/cat7.jpg" alt="猫咪7"></div>
+                    <div class="cat-item"><img src="images/cat8.jpg" alt="猫咪8"></div>
+                    <div class="cat-item"><img src="images/cat9.jpg" alt="猫咪9"></div>
+                    <div class="cat-item"><img src="images/cat10.jpg" alt="猫咪10"></div>
+                    <div class="cat-item"><img src="images/cat11.jpg" alt="猫咪11"></div>
+                    <div class="cat-item"><img src="images/cat12.jpg" alt="猫咪12"></div>
+                    <!-- 复制前面的图片，确保无缝循环 -->
+                    <div class="cat-item"><img src="images/cat1.jpg" alt="猫咪1"></div>
+                    <div class="cat-item"><img src="images/cat2.jpg" alt="猫咪2"></div>
+                    <div class="cat-item"><img src="images/cat3.jpg" alt="猫咪3"></div>
+                    <div class="cat-item"><img src="images/cat4.jpg" alt="猫咪4"></div>
+                    <div class="cat-item"><img src="images/cat5.jpg" alt="猫咪5"></div>
+                    <div class="cat-item"><img src="images/cat6.jpg" alt="猫咪6"></div>
+                    <div class="cat-item"><img src="images/cat7.jpg" alt="猫咪7"></div>
+                    <div class="cat-item"><img src="images/cat8.jpg" alt="猫咪8"></div>
+                    <div class="cat-item"><img src="images/cat9.jpg" alt="猫咪9"></div>
+                    <div class="cat-item"><img src="images/cat10.jpg" alt="猫咪10"></div>
+                    <div class="cat-item"><img src="images/cat11.jpg" alt="猫咪11"></div>
+                    <div class="cat-item"><img src="images/cat12.jpg" alt="猫咪12"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="JS/clock.js"></script>
+    <script src="JS/sidebar-navigation.js"></script>
+</body>
+</html>

@@ -5,8 +5,8 @@
   
  .content-wrapper {
     display: flex;
-    margin-top: 60px;
-    height: calc(100vh - 60px);
+    margin-top: 80px; /* 增加顶部边距 */
+    height: calc(100vh - 80px);
     overflow: hidden;
  }
 
@@ -14,14 +14,15 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-    margin-left: 50px; /* 为侧边栏留出空间，减小左边距 */
+    margin-left: 70px; /* 增加左侧边距 */
+    padding: 20px; /* 添加内边距 */
  }
 
  .encryption-decryption-panel, .notifications, .notebook {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 20px;
+    margin-bottom: 20px; /* 增加底部边距 */
     padding: 20px;
     overflow-y: auto;
     max-height: calc(100vh - 100px);
@@ -44,7 +45,10 @@
  }
 
  .notebook {
-    flex: 0.5;
+   margin-bottom: 40px;
+   margin-top: 20px;
+   margin-right: 20px;
+   flex: 0.5;
  }
 
  .notebook ul {
@@ -68,6 +72,16 @@
     cursor: pointer;
  }
 
+ .remove-note {
+   background-color: pink;
+   color: white;
+   border: none;
+   padding: 10px 15px;
+   border-radius: 5px;
+   cursor: pointer;
+   margin-left:77%; /* 靠板块右边 */
+ }
+
  /* 侧边栏样式 */
  .sidebar {
     background-color: #f0f0f0;
@@ -78,7 +92,8 @@
     align-items: center;
     gap: 15px;
     position: fixed;
-    top: 80px; /* 增加顶部距离 */
+    top: 80px; /* 与顶栏保持一致 */
+    left: 0; /* 确保靠左对齐 */
     height: calc(100vh - 80px); /* 调整高度 */
     border-right: 1px solid #ddd;
     z-index: 100;
@@ -111,6 +126,7 @@
     position: fixed;
     width: 100%;
     top: 0;
+    left: 0;
     z-index: 1000;
     height: 60px;
  }
@@ -135,7 +151,7 @@
     color: #666;
  }
 
- .help {
+ .login {
     background-color: pink;
     color: black;
     border: none;
@@ -144,82 +160,45 @@
     cursor: pointer;
  }
 
- .help:hover {
-   background-color: greenyellow;
- }
- 
-
- /* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; 
+ .login:hover {
+   background-color: rgb(255, 106, 47);
  }
 
- body {
-    font-family: Arial, sans-serif;
-    display:flex;
-    height: 100vh;
-    overflow: hidden;
- }
-
- header {
-    background-color: #f8f9fa;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #ddd;
+ .popup {
     position: fixed;
-    width: 100%;
     top: 0;
-    z-index: 1000;
- }
-
- .sidebar {
-    background-color: #f0f0f0;
-    padding: 20px;
-    width: 60px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 15px;
-    position: fixed;
-    top: 60px;
-    height: calc(100vh - 60px);
-    border-right: 1px solid #ddd;
- }
+    z-index: 1000;
+}
 
- .sidebar .icon {
-    background-color: pink;
-    padding: 10px;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer
- }
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+}
 
- main {
-   margin-left: 80px;
-   margin-top: 80px;
-   padding: 20px;
-   flex: 1;
-   overflow-y: auto;
- } */
+.popup-content h2 {
+    margin-top: 0;
+}
 
- /* section h3 {
-   margin-bottom: 10px;
- }
+.popup-content textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+}
 
- .notification .notification-box {
-   min-height: 50px;
-   background-color: aqua;
-   padding: 10px;
-   border: 1px solid #ddd;
- }
+.popup-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
 
- .notebook {
-   position: fixed;
-   right: 0;
-   top: 60px;
-   width: 200px;
-   height: calc(100vh-6)
- } */
+.popup-buttons button {
+    margin-left: 10px;
+}

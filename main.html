@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,36 +11,36 @@
     <link rel="stylesheet" href="CSS/pointer-particles.css">
 </head>
 <body>
-    <!-- 顶栏 -->
     <header>
         <h1>欢迎来到加密网页</h1>
         <div class="date-info">
             <span id="date">YYYY-MM-DD</span>
             <span id="clock">00:00:00</span>
-            <button class="help">帮助</button>
+            <button class="login">登录</button>
         </div>
     </header>
 
     <div class="content-wrapper">
         <!-- 侧边栏 -->
         <aside class="sidebar">
-            <button class="icon">🔒</button>
-            <button class="icon">☰</button>
-            <button class="icon">😺</button>
-            <button class="icon">⚙️</button>
+            <button class="icon" data-page="main.html">🏠</button>
+            <button class="icon" data-page="lock.html">🔒</button>
+            <button class="icon" data-page="cat.html">😺</button>
+            <button class="icon" data-page="set.html">⚙️</button>
             <button class="icon">📝</button>
         </aside>
 
         <main>
             <!-- 加密解密板块 -->
             <section class="encryption-decryption-panel">
-                <h2>加密/解密</h2>
+                <h2>小仙女变魔法</h2>
                 <div class="input-area">
                     <textarea id="inputText" placeholder="请输入要加密或解密的文本"></textarea>
                 </div>
                 <div class="button-group">
                     <button id="encryptBtn">加密</button>
                     <button id="decryptBtn">解密</button>
+                    <label for="shiftInput">偏移量：</label>
                 </div>
                 <div class="output-area">
                     <textarea id="outputText" readonly placeholder="结果将显示在这里"></textarea>
@@ -56,9 +57,8 @@
         <section class="notebook">
             <h3>笔记本</h3>
             <ul>
-                <li>笔记1</li>
-                <li>笔记2</li>
                 <button class="add-note">➕</button>
+                <button class="remove-note">➖</button>
             </ul>
         </section>
     </div>
@@ -67,6 +67,9 @@
     <!-- JS -->
     <script src="JS/clock.js"></script>
     <script type="module" src="JS/anime.js"></script>
-    
+    <script type="module" src="JS/encry.js"></script>
+    <script src="JS/sidebar-navigation.js"></script>
+    <script src="JS/auth.js"></script>
+    <script src="JS/auto-logout.js"></script>
 </body>
 </html>

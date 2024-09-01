@@ -1,3 +1,9 @@
+#Encryption_Decryption
+## 简介
+这是一个基于HTML、CSS和JavaScript的加密/解密网页。它允许用户输入文本并选择加密或解密操作。加密后的文本将显示在输出区域，用户可以复制或保存结果。
 
-## Latest Commit
-f8d6ea4 - Update README with latest commit info (2024-09-01 11:49:46 -0400) <Yunxi-Zhou>
+## 功能
+- 输入文本
+- 选择加密或解密操作
+- 输出加密或解密后的文本
+- 复制或保存结果

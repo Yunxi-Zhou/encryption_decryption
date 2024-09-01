@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设置</title>
+    <link rel="stylesheet" href="CSS/main.css">
+</head>
+<body>
+    <header>
+        <h1>设置</h1>
+    </header>
+
+    <div class="content-wrapper">
+        <aside class="sidebar">
+            <button class="icon" data-page="main.html">🏠</button>
+            <button class="icon" data-page="lock.html">🔒</button>
+            <button class="icon" data-page="cat.html">😺</button>
+            <button class="icon" data-page="set.html">⚙️</button>
+            <button class="icon">📝</button>
+        </aside>
+
+        <main>
+            <section class="settings-panel">
+                <h2>修改密码</h2>
+                <form id="changePasswordForm">
+                    <input type="password" id="currentPassword" placeholder="当前密码" required>
+                    <input type="password" id="newPassword" placeholder="新密码" required>
+                    <input type="password" id="confirmPassword" placeholder="确认新密码" required>
+                    <button type="submit">修改密码</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script src="JS/settings.js"></script>
+    <script src="JS/sidebar-navigation.js"></script>
+</body>
+</html>
