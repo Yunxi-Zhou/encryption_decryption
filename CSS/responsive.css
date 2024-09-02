@@ -92,3 +92,15 @@
         padding: 8px 12px; /* 减小按钮内边距 */
     }
 }
+
+@media screen and (max-width: 768px) {
+    #game-container {
+        margin-top: -30px; /* 在较小的屏幕上稍微减少上移的距离 */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #game-container {
+        margin-top: -20px; /* 在更小的屏幕上进一步减少上移的距离 */
+    }
+}

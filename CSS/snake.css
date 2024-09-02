@@ -17,6 +17,7 @@ main {
     border: 2px solid #333;
     border-radius: 10px;
     background-color: #f0f0f0;
+    margin-top: -50px; /* 添加这一行，将容器向上移动 */
 }
 
 #gameCanvas {
@@ -107,7 +108,7 @@ main {
     border-radius: 10px;
 }
 
-#restartBtn {
+#continueBtn, #quitBtn {
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -121,8 +122,16 @@ main {
     border-radius: 5px;
 }
 
-#restartBtn:hover {
+#continueBtn:hover, #quitBtn:hover {
     background-color: #45a049;
+}
+
+#quitBtn {
+    background-color: #f44336;
+}
+
+#quitBtn:hover {
+    background-color: #d32f2f;
 }
 
 /* 添加暗黑模式样式 */

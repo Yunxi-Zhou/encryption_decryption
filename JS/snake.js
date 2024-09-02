@@ -3,6 +3,10 @@ const ctx = canvas.getContext('2d');
 const startBtn = document.getElementById('startBtn');
 const scoreElement = document.getElementById('score');
 const toggleLightBtn = document.getElementById('toggleLight');
+const modal = document.getElementById('gameOverModal');
+const finalScoreElement = document.getElementById('finalScore');
+const continueBtn = document.getElementById('continueBtn');
+const quitBtn = document.getElementById('quitBtn');
 
 const box = 15;
 let snake = [];
@@ -32,6 +36,7 @@ function createFood() {
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawGrid();
     
     // 绘制网格线
     ctx.strokeStyle = "#ddd";
@@ -83,9 +88,6 @@ function draw() {
     
     // 检查碰撞
     if (checkCollision(newHead)) {
-        clearInterval(game);
-        alert(`游戏结束！你的得分是: ${score}`);
-        init();
         return;
     }
     
@@ -93,11 +95,15 @@ function draw() {
 }
 
 function checkCollision(head) {
-    return (
+    if (
         head.x < 0 || head.x >= canvas.width ||
         head.y < 0 || head.y >= canvas.height ||
         snake.some(segment => segment.x === head.x && segment.y === head.y)
-    );
+    ) {
+        gameOver();
+        return true;
+    }
+    return false;
 }
 
 function changeDirection(event) {
@@ -128,5 +134,61 @@ toggleLightBtn.addEventListener('click', () => {
     toggleLightBtn.textContent = document.body.classList.contains('dark-mode') ? '开灯' : '关灯';
 });
 
+function showGameOverModal() {
+    finalScoreElement.textContent = `你的最终得分是: ${score}`;
+    modal.style.display = 'block';
+}
+
+function hideGameOverModal() {
+    modal.style.display = 'none';
+}
+
+function gameOver() {
+    clearInterval(game);
+    showGameOverModal();
+}
+
+function resetGame() {
+    snake = [
+        {x: 9 * box, y: 10 * box},
+        {x: 8 * box, y: 10 * box},
+        {x: 7 * box, y: 10 * box}
+    ];
+    direction = 'right';
+    score = 0;
+    scoreElement.textContent = `分数: ${score}`;
+    createFood();
+}
+
+continueBtn.addEventListener('click', () => {
+    hideGameOverModal();
+    resetGame();
+    game = setInterval(draw, 100);
+});
+
+quitBtn.addEventListener('click', () => {
+    hideGameOverModal();
+    resetGame();
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawGrid();
+});
+
+function drawGrid() {
+    ctx.strokeStyle = "#ddd";
+    for (let i = 0; i <= canvas.width; i += box) {
+        ctx.beginPath();
+        ctx.moveTo(i, 0);
+        ctx.lineTo(i, canvas.height);
+        ctx.stroke();
+    }
+    for (let i = 0; i <= canvas.height; i += box) {
+        ctx.beginPath();
+        ctx.moveTo(0, i);
+        ctx.lineTo(canvas.width, i);
+        ctx.stroke();
+    }
+}
+
 init();
+drawGrid();
 
