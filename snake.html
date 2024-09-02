@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake Game</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="CSS/clock.css">
+    <title>贪吃蛇游戏</title>
     <link rel="stylesheet" href="CSS/main.css">
     <link rel="stylesheet" href="CSS/pointer-particles.css">
     <link rel="stylesheet" href="CSS/cute-font.css">
@@ -13,11 +11,11 @@
 </head>
 <body>
     <header>
-        <h1>是贪吃蛇哦~</h1>
-        <div class="data-info">
+        <h1>贪吃蛇小游戏</h1>
+        <div class="date-info">
             <span id="date">YYYY-MM-DD</span>
             <span id="clock">00:00:00</span>
-            <button id="start" class="help">开始</button>
+            <button id="toggleLight" class="help">关灯</button>
         </div>
     </header>
 
@@ -30,6 +28,31 @@
             <button class="icon" data-page="set.html">⚙️</button>
             <button class="icon" data-page="money.html">💴</button>
         </aside>
+
+        <main>
+            <div id="game-container">
+                <canvas id="gameCanvas" width="300" height="300"></canvas>
+                <div id="game-controls">
+                    <button id="startBtn">开始游戏</button>
+                    <div id="direction-keys">
+                        <button id="upBtn">↑</button>
+                        <button id="leftBtn">←</button>
+                        <button id="rightBtn">→</button>
+                        <button id="downBtn">↓</button>
+                    </div>
+                </div>
+                <div id="score">分数: 0</div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 添加 Game Over 弹窗 -->
+    <div id="gameOverModal" class="modal">
+        <div class="modal-content">
+            <h2>游戏结束</h2>
+            <p id="finalScore"></p>
+            <button id="restartBtn">重新开始</button>
+        </div>
     </div>
 
     <div class="custom-cursor"></div>
@@ -38,6 +61,5 @@
     <script src="JS/sidebar-navigation.js"></script>
     <script src="JS/auto-logout.js"></script>
     <script src="JS/snake.js"></script>
-    
 </body>
 </html>
