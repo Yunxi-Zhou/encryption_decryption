@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>贪吃蛇游戏</title>
+    <title>SnakeGame</title>
     <link rel="stylesheet" href="CSS/main.css">
     <link rel="stylesheet" href="CSS/pointer-particles.css">
     <link rel="stylesheet" href="CSS/cute-font.css">
@@ -11,11 +11,11 @@
 </head>
 <body>
     <header>
-        <h1>贪吃蛇小游戏</h1>
+        <h1>Snake Game</h1>
         <div class="date-info">
             <span id="date">YYYY-MM-DD</span>
             <span id="clock">00:00:00</span>
-            <button id="toggleLight" class="help">关灯</button>
+            <button id="toggleLight" class="help">TURN OFF</button>
         </div>
     </header>
 
@@ -33,7 +33,7 @@
             <div id="game-container">
                 <canvas id="gameCanvas" width="300" height="300"></canvas>
                 <div id="game-controls">
-                    <button id="startBtn">开始游戏</button>
+                    <button id="startBtn">Start Game</button>
                     <div id="direction-keys">
                         <button id="upBtn">↑</button>
                         <button id="leftBtn">←</button>
@@ -41,7 +41,7 @@
                         <button id="downBtn">↓</button>
                     </div>
                 </div>
-                <div id="score">分数: 0</div>
+                <div id="score">Score: 0</div>
             </div>
         </main>
     </div>
@@ -49,10 +49,10 @@
     <!-- 添加 Game Over 弹窗 -->
     <div id="gameOverModal" class="modal">
         <div class="modal-content">
-            <h2>游戏结束</h2>
+            <h2>Game Over</h2>
             <p id="finalScore"></p>
-            <button id="continueBtn">继续游戏</button>
-            <button id="quitBtn">退出游戏</button>
+            <button id="continueBtn">Continue</button>
+            <button id="quitBtn">Exit Game</button>
         </div>
     </div>
 

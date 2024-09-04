@@ -24,7 +24,7 @@ function init() {
     createFood();
     direction = 'right';
     score = 0;
-    scoreElement.textContent = `分数: ${score}`;
+    scoreElement.textContent = `Scores: ${score}`;
 }
 
 function createFood() {
@@ -77,7 +77,7 @@ function draw() {
     // 检查是否吃到食物
     if (snakeX === food.x && snakeY === food.y) {
         score++;
-        scoreElement.textContent = `分数: ${score}`;
+        scoreElement.textContent = `Scores: ${score}`;
         createFood();
     } else {
         snake.pop();
@@ -131,11 +131,11 @@ document.getElementById('downBtn').addEventListener('click', () => { if(directio
 // 关灯功能
 toggleLightBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
-    toggleLightBtn.textContent = document.body.classList.contains('dark-mode') ? '开灯' : '关灯';
+    toggleLightBtn.textContent = document.body.classList.contains('dark-mode') ? 'TURN ON' : 'TURN OFF';
 });
 
 function showGameOverModal() {
-    finalScoreElement.textContent = `你的最终得分是: ${score}`;
+    finalScoreElement.textContent = `Your final scores are: ${score}`;
     modal.style.display = 'block';
 }
 
@@ -156,7 +156,7 @@ function resetGame() {
     ];
     direction = 'right';
     score = 0;
-    scoreElement.textContent = `分数: ${score}`;
+    scoreElement.textContent = `Scores: ${score}`;
     createFood();
 }
 

@@ -47,10 +47,10 @@ function addNotification(message) {
 // 复制到剪贴板函数
 function copyToClipboard(text) {
     navigator.clipboard.writeText(text).then(() => {
-        addNotification('结果已复制到剪贴板');
+        addNotification('Result copied to clipboard');
     }, (err) => {
-        console.error('无法复制文本: ', err);
-        addNotification('复制失败，请手动复制');
+        console.error("Can't copied to clipboard", err);
+        addNotification('Copy failed, please copy manually');
     });
 }
 
@@ -59,17 +59,17 @@ encryptBtn.addEventListener('click', () => {
     const input = inputText.value;
     const shift = parseInt(shiftInput.value);
     if (input.trim() === '') {
-        addNotification('请输入要加密的文本');
+        addNotification('Please enter plain text to be encrypted');
         return;
     }
     if (isNaN(shift) || shift < 1 || shift > 61) {
-        addNotification('请输入1到61之间的偏移量');
+        addNotification('Please enter the Secret Key number between 1 - 61');
         return;
     }
     const encrypted = encrypt(input, shift);
     outputText.value = encrypted;
-    addNotification(`加密结果：${encrypted}`);
-    addNote(`小仙女要对你说: ${encrypted}`);
+    addNotification(`Encryption result: ${encrypted}`);
+    addNote(`Encryption result: ${encrypted}`);
     copyToClipboard(encrypted);
 });
 
@@ -78,16 +78,18 @@ decryptBtn.addEventListener('click', () => {
     const input = inputText.value;
     const shift = parseInt(shiftInput.value);
     if (input.trim() === '') {
-        addNotification('请输入要解密的文本');
+        addNotification('Please enter plain text to be decrypted');
         return;
     }
     if (isNaN(shift) || shift < 1 || shift > 61) {
-        addNotification('请输入1到61之间的偏移量');
+        addNotification('Please enter the Secret Key number between 1 - 61');
         return;
     }
     const decrypted = decrypt(input, shift);
     outputText.value = decrypted;
-    addNotification('解密成功');
+    addNotification('Successfully decrypted!!!');
+    addNotification(`Decryption result: ${decrypted}`);
+    addNote(`Decryption result: ${decrypted}`);
     copyToClipboard(decrypted);
 });
 

@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('currentUser', username);
             window.location.href = 'main.html';
         } else {
-            alert('用户名或密码错误');
+            alert('The username and/or passwords you specified do not match');
         }
     });
 });

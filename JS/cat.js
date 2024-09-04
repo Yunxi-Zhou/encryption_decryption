@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
     toggleButton.addEventListener('click', function() {
         body.classList.toggle('dark-mode');
         if (body.classList.contains('dark-mode')) {
-            toggleButton.textContent = '开灯';
+            toggleButton.textContent = 'TURN ON';
         } else {
-            toggleButton.textContent = '关灯';
+            toggleButton.textContent = 'TURN OFF';
         }
     });
 });

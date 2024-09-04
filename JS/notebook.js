@@ -7,19 +7,19 @@ function initDB() {
     const request = indexedDB.open(dbName, dbVersion);
 
     request.onerror = (event) => {
-        console.error("数据库错误: " + event.target.error);
+        console.error("Database error: " + event.target.error);
     };
 
     request.onsuccess = (event) => {
         db = event.target.result;
-        console.log("数据库连接成功");
+        console.log("Successfully connected to database");
         loadNotesFromDatabase();
     };
 
     request.onupgradeneeded = (event) => {
         db = event.target.result;
         const objectStore = db.createObjectStore("notes", { keyPath: "id", autoIncrement: true });
-        console.log("数据库升级成功");
+        console.log("database updated successfully");
     };
 }
 
@@ -39,7 +39,7 @@ function loadNotesFromDatabase() {
     const request = objectStore.getAll();
 
     request.onerror = (event) => {
-        console.error("加载笔记失败: " + event.target.error);
+        console.error("Failed to loaded notebook: " + event.target.error);
     };
 
     request.onsuccess = (event) => {
@@ -66,11 +66,11 @@ function addNoteToDatabase(text) {
     const request = objectStore.add({ text: text });
 
     request.onerror = (event) => {
-        console.error("添加笔记失败: " + event.target.error);
+        console.error("Failed to loaded notebook: " + event.target.error);
     };
 
     request.onsuccess = (event) => {
-        console.log("笔记已成功保存到数据库");
+        console.log("Note added to database successfully");
         addNoteToDOM(text, event.target.result);
     };
 }
@@ -89,8 +89,8 @@ function createPopup(title, content, onConfirm) {
             <h2>${title}</h2>
             ${content}
             <div class="popup-buttons">
-                <button class="confirm">确认</button>
-                <button class="cancel">取消</button>
+                <button class="confirm">Confirm</button>
+                <button class="cancel">Cancel</button>
             </div>
         </div>
     `;
@@ -115,7 +115,7 @@ function editNote(event) {
     const oldText = noteItem.textContent;
     const id = parseInt(noteItem.dataset.id);
 
-    createPopup('编辑笔记', `<textarea id="editNoteText">${oldText}</textarea>`, () => {
+    createPopup('Edit Notebook', `<textarea id="editNoteText">${oldText}</textarea>`, () => {
         const newText = document.getElementById('editNoteText').value;
         if (newText.trim() !== '' && newText !== oldText) {
             updateNoteInDatabase(id, newText);
@@ -131,7 +131,7 @@ function updateNoteInDatabase(id, newText) {
     const request = objectStore.get(id);
 
     request.onerror = (event) => {
-        console.error("获取笔记失败: " + event.target.error);
+        console.error("fail to request notebook: " + event.target.error);
     };
 
     request.onsuccess = (event) => {
@@ -140,11 +140,11 @@ function updateNoteInDatabase(id, newText) {
         const updateRequest = objectStore.put(data);
         
         updateRequest.onerror = (event) => {
-            console.error("更新笔记失败: " + event.target.error);
+            console.error("fail to update notebook: " + event.target.error);
         };
         
         updateRequest.onsuccess = (event) => {
-            console.log("笔记已成功更新");
+            console.log("notebook updated successfully");
         };
     };
 }
@@ -156,7 +156,7 @@ function removeLatestNote() {
     const request = objectStore.openCursor(null, "prev");
 
     request.onerror = (event) => {
-        console.error("删除笔记失败: " + event.target.error);
+        console.error("fail to delete notebook: " + event.target.error);
     };
 
     request.onsuccess = (event) => {
@@ -164,21 +164,21 @@ function removeLatestNote() {
         if (cursor) {
             const deleteRequest = cursor.delete();
             deleteRequest.onsuccess = () => {
-                console.log("最近的笔记已从数据库中删除");
+                console.log("recent notebook has been deleted from database");
                 const noteToRemove = notebookList.querySelector(`li[data-id="${cursor.value.id}"]`);
                 if (noteToRemove) {
                     notebookList.removeChild(noteToRemove);
                 }
             };
         } else {
-            console.log("没有笔记可删除");
+            console.log("Empty notebook");
         }
     };
 }
 
 // 添加新笔记按钮事件监听器
 addNoteBtn.addEventListener('click', () => {
-    createPopup('添加新笔记', '<textarea id="newNoteText" placeholder="请输入笔记内容"></textarea>', () => {
+    createPopup('add new notebook', '<textarea id="newNoteText" placeholder="Please enter the text of notebook"></textarea>', () => {
         const noteText = document.getElementById('newNoteText').value;
         if (noteText && noteText.trim() !== '') {
             addNote(noteText);

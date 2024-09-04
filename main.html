@@ -13,11 +13,11 @@
 </head>
 <body>
     <header>
-        <h1>欢迎来到加密网页</h1>
+        <h1>Welcome to the Encryption Page</h1>
         <div class="date-info">
             <span id="date">YYYY-MM-DD</span>
             <span id="clock">00:00:00</span>
-            <button class="login">登录</button>
+            <button class="login">login</button>
         </div>
     </header>
 
@@ -35,30 +35,30 @@
         <main>
             <!-- 加密解密板块 -->
             <section class="encryption-decryption-panel">
-                <h2>小仙女变魔法</h2>
+                <h2>Encryption/Decryption</h2>
                 <div class="input-area">
-                    <textarea id="inputText" placeholder="请输入要加密或解密的文本"></textarea>
+                    <textarea id="inputText" placeholder="Enter plain text to be Encrypted/Decrypted"></textarea>
                 </div>
                 <div class="button-group">
-                    <button id="encryptBtn">加密</button>
-                    <button id="decryptBtn">解密</button>
-                    <label for="shiftInput">偏移量：</label>
+                    <button id="encryptBtn">Encrypt</button>
+                    <button id="decryptBtn">Decrypt</button>
+                    <label for="shiftInput">Enter Secret Key: </label>
                     <input type="number" id="shiftInput" min="1" max="25" value="3">
                 </div>
                 <div class="output-area">
-                    <textarea id="outputText" readonly placeholder="结果将显示在这里"></textarea>
+                    <textarea id="outputText" readonly placeholder="Result goes here"></textarea>
                 </div>
             </section>
 
             <section class="notifications">
-                <h3>通知</h3>
+                <h3>Notifications</h3>
                 <div class="notification-box">
                 </div>
             </section>
         </main>
 
         <section class="notebook">
-            <h3>笔记本</h3>
+            <h3>Notebook</h3>
             <ul>
                 <button class="add-note">➕</button>
                 <button class="remove-note">➖</button>

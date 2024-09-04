@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const notebookSection = document.querySelector('.notebook');
 
     if (isLoggedIn) {
-        loginButton.textContent = '登出';
+        loginButton.textContent = 'logout';
         notebookSection.style.display = 'block';
     } else {
-        loginButton.textContent = '登录';
+        loginButton.textContent = 'login';
         notebookSection.style.display = 'none';
     }
 

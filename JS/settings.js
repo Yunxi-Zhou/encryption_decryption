@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentUser = localStorage.getItem('currentUser');
 
         if (newPassword !== confirmPassword) {
-            alert('新密码和确认密码不匹配');
+            alert('new password and confirm password do not match');
             return;
         }
 
@@ -21,9 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentPassword === (storedPassword || initialPassword)) {
             // 更新密码
             localStorage.setItem(`password_${currentUser}`, newPassword);
-            alert('密码修改成功');
+            alert('change password successfully');
         } else {
-            alert('当前密码错误');
+            alert('currently using wrong password');
         }
     });
 });
